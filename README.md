@@ -9,8 +9,8 @@ The model has been fine-tuned with a bidirectional mechanism and using thousands
 # Document Format Reconstruction with Neural Language Models for Automatic Analysis of Financial SEC Filings
  | **Autoregressive Transformer** | XLNet Large |
 |:---:|:---:|
-| **BiLSTM's architecture** | \makecell{Two stacked LSTMs with 1024 units for each one,\\and a dropout of 0.2 between them.} |
-| **DNN's architecture** | \makecell{A neural network with two hidden layers of 512 and\\256 units, and a dropout of 0.2 after these layers.} |
+| **BiLSTM's architecture** | Two stacked LSTMs with 1024 units for each one,\\and a dropout of 0.2 between them. |
+| **DNN's architecture** | A neural network with two hidden layers of 512 and\\256 units, and a dropout of 0.2 after these layers. |
 | **Hidden and\\Attention dropout** | 0.1 |
 | **CLS token dropout** | 0.0 |
 | **Batch size** | 32 |
