@@ -1,22 +1,24 @@
 # SEC-former
+
+## Model description & intended uses
 SEC-former is a transformer to perform Document Format Reconstruction of 10-K SEC filings
 
 The analysis of financial reports is a crucial task for investors and regulators, especially the mandatory annual reports (10-K) required by the SEC (Securities and Exchange Commission) that provide crucial information about a public company in the American stock market. Although SEC suggests a specific document format to uniform and simplifies the analysis, in recent years, several companies have introduced their own format and organization of the contents making human-based and automatic knowledge extraction inherently more difficult.
 
 We propose SEC-former, an Autoregressive language model that has been fine-tuned to classify paragraphs into one of the items suggested by the SEC guidelines.
-The model has been fine-tuned with a bidirectional mechanism and using thousands of 10-Ks in the years between 2011-201.
+The model has been fine-tuned with a bidirectional mechanism and using thousands of 10-Ks in the years between 2011-2021.
 
-# Document Format Reconstruction with Neural Language Models for Automatic Analysis of Financial SEC Filings
+Model's architecture and hyperparameters are shown in the following table:
  | **Autoregressive Transformer** | XLNet Large |
 |:---:|:---:|
-| **BiLSTM's architecture** | Two stacked LSTMs with 1024 units for each one,\\and a dropout of 0.2 between them. |
-| **DNN's architecture** | A neural network with two hidden layers of 512 and\\256 units, and a dropout of 0.2 after these layers. |
+| **BiLSTM's architecture** | Two stacked LSTMs with 1024 units for each one, and a dropout of 0.2 between them. |
+| **DNN's architecture** | A neural network with two hidden layers of 512 and 256 units, and a dropout of 0.2 after these layers. |
 | **Hidden and\\Attention dropout** | 0.1 |
 | **CLS token dropout** | 0.0 |
 | **Batch size** | 32 |
 | **Learning rate** | 5e-5 |
 
-# Download the model
+## Download the model
 Please, find the h5 version of the Keras model at http://www.ce.unipr.it/people/lombardo/SEC-Former.h5
 
 
@@ -35,7 +37,7 @@ First of all, import ```inference_utils``` file and load the model:
 ```python
 from inference_utils import get_model, inference
 
-model = get_model(path='full_model/XLNet_BiLSTM_DNN.h5')
+model = get_model(path='SEC-Former.h5')
 ```
 The next step simply is the inference:
 ```python
